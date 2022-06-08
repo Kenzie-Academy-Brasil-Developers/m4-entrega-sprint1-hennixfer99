@@ -1,9 +1,16 @@
 import listUserService from "../services/listUsers.service";
 
 const listUserController = (req, res) => {
-    const users = listUserService()
+    
+    try{
+       const users = listUserService()
+       return res.status(200).json(users)
+       
+   }catch(error){
 
-    return res.status(201).json(users)
+        return res.status(401).json("teste")
+
+   }
 }
 
 export default listUserController

@@ -3,7 +3,7 @@ import {v4 as uuidv4} from "uuid"
 import * as bycrypt from "bcryptjs"
 
 
-const createUserService = async (email, name, password, isAdm) => {
+const createUserService = async (email, name, password, isAdm = false) => {
     const hashedPassword = await bycrypt.hash(password, 10)
 
     const newUser = {

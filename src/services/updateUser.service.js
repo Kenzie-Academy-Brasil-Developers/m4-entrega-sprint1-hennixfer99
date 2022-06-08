@@ -10,7 +10,7 @@ const updateUserService = (uuid,name,email) => {
     const userIndex = users.findIndex(element => element.uuid === uuid)
 
     if(userIndex === -1) {
-        return "User not found"
+        throw new Error({message: "teste"})
     }
 
     users[userIndex] = {...users[userIndex], ...updatedUser}
